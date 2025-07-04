@@ -26,7 +26,7 @@ Loja* criar_loja(const char* nome) {
 
 // Insere no início da lista
 void inserir_inicio(RotaEntrega* rota, const char* nome_loja) {
-    Loja* nova_loja = criar_loja(NULL);
+    Loja* nova_loja = criar_loja(nome_loja);
 
     nova_loja->proximo = rota->inicio;
     rota->inicio = nova_loja;
@@ -88,8 +88,6 @@ int main() {
     inserir_inicio(&rota, "Loja B");
     inserir_inicio(&rota, "Loja A");
     inserir_na_posicao(&rota, "Loja C", 2);
-    inserir_na_posicao(&rota, "Loja G", 6);
-    inserir_na_posicao(&rota, "Loja H", 7);
 
     printf("Rota final:\n");
     imprimir_rota(&rota);
